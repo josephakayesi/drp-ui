@@ -159,6 +159,10 @@
     @apply md:w-[60%];
   }
 
+  .image-bw{
+    @apply grayscale hover:grayscale-0 transition-all duration-300
+  }
+
   /* Animation Classes */
   .fade-in {
     opacity: 0;
