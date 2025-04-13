@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -19,10 +20,13 @@ const ProjectCard = ({
   return (
     <div className="rounded-lg overflow-hidden bg-secondary text-white relative group h-[420px] stagger-item">
       <div className="absolute inset-0 bg-gradient-to-t from-secondary to-transparent z-10"></div>
-      <img
+      <Image
         src={imageUrl}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        width={500} 
+        height={300} 
+        className="..."
+        unoptimized
       />
       <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
         <h4 className="heading-sm mb-1">{title}</h4>
