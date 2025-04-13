@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Header from "@/stories/header/Header";
 import Footer from "@/stories/footer/Footer";
-import { Toaster, Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,7 +38,6 @@ export default function RootLayout({
       <body className={` ${montserrat.variable} antialiased`}>
         <ThemeProvider>
           <Toaster />
-          <Sonner />
           <Header />
           <div
             className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8"
