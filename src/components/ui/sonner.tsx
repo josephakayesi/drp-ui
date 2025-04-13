@@ -2,29 +2,22 @@
 import { Toaster as Sonner } from "sonner";
 import { useTheme } from "../theme/ThemeProvider";
 
-type ToasterProps = React.ComponentProps<typeof Sonner>;
-
-const Toaster = ({ ...props }: ToasterProps) => {
+const Toaster = () => {
   const { theme } = useTheme();
 
   return (
     <Sonner
+      position="top-center"
       theme={theme === "dark" ? "dark" : "light"}
-      className="toaster group"
+      richColors
+      closeButton
       toastOptions={{
-        classNames: {
-          toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-          description: "group-[.toast]:text-muted-foreground",
-          actionButton:
-            "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
-          cancelButton:
-            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+        style: {
+          fontFamily: 'var(--font-montserrat)',
         },
       }}
-      {...props}
     />
   );
 };
 
-export { Toaster, Sonner };
+export { Toaster };
