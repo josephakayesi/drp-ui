@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Book, Home, Hospital } from "lucide-react";
+import Image from "next/image";
 
 interface Initiative {
   title: string;
@@ -128,9 +129,11 @@ const CoreInitiatives = () => {
                       <CarouselItem key={imgIndex}>
                         <div className="p-1">
                           <div className="overflow-hidden rounded-lg">
-                            <img
+                            <Image
                               src={img}
                               alt={`${initiative.title} image ${imgIndex + 1}`}
+                              width={800}
+                              height={256}
                               className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
                             />
                           </div>
