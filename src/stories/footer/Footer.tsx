@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
 import { ROUTES } from "@/constants/menuItems";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const groupedRoutes = ROUTES.reduce(
   (acc, route) => {
@@ -22,23 +22,16 @@ const groupedRoutes = ROUTES.reduce(
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const { toast } = useToast();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!email || !email.includes("@")) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address",
-        variant: "destructive",
-      });
+      toast.error("Please enter a valid email address");
       return;
     }
 
-    toast({
-      title: "Subscription successful!",
-      description: "Thank you for subscribing to our newsletter",
-    });
+    toast.success("Thank you for subscribing to our newsletter!");
     setEmail("");
   };
 
